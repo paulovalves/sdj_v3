@@ -27,28 +27,7 @@
 <script lang="ts">
     export default defineComponent({
         name: 'EnteTable',
-        created() {
-            this.getusers();
-        },
-        data() {
-            return {
-                users: [
-                  {id: 1, name: 'john', age: 20},
-                  {id: 1, name: 'jane', age: 20},
-                ]
-            }
-        },
-        methods: {
-            getusers() {
-              console.log('getusers');
-            }
-
-        }
-    })
-
-
-    
-    
+            })
 </script>
 
 <style>
