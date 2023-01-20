@@ -3,25 +3,14 @@
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
+clone
+```
+git clone https://github.com/paulovalves/sdj_v3.git
 
-Make sure to install the dependencies:
+cd sdj_v3
 
-```bash
-# yarn
-yarn install
-
-# npm
 npm install
 
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
 npm run dev
 ```
 
