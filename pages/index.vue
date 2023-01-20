@@ -6,6 +6,7 @@
 </template>
 
 <script lang="ts">
+    import { makeServer } from '../server/server';
     import EnteTable from '../components/tables/EnteTable.vue';
     import PesquisarEnteForm from '../components/forms/PesquisarEnteForm.vue';
     import UserModel from '../src/domain/entities/UserModel';
@@ -18,26 +19,24 @@
         },
         created() {
             this.getUsers();
+            makeServer();
         },
         data() {
             return {
-                users: [] as UserModel[],
+                users: [],
             }
         },
         methods: {
             getUsers() {
-                this.users.push(
-                    {id: 1, name: 'john', age: 20},
-                    {id: 1, name: 'jane', age: 20},
-                );
-                console.log(this.users);
+                const result = fetch('/api/users');
+                result.then((response) => {
+                    response.json().then((data) => {
+                        this.users = data;
+                    });
+                });
             }
         }
     })
-
-
-    
-    
 </script>
 
 <style>
