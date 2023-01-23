@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Alvara Eletronico</h3>
+        <h3>Alvará Eletrônico</h3>
     </div>
 </template>
 

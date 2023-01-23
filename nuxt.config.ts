@@ -4,10 +4,22 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vuetify'],
     },
+    imports: {
+        dirs: ['store']
+    },
+    modules: [
+        [
+            '@pinia/nuxt',
+            { autoImports: ['defineStore', 'acceptHMRUpdate'] },
+        ]
+    ],
+    extends: [
+        '@nuxtjs/eslint-config-typescript',
+    ],
     vite: {
         define: {
             'process.env.DEBUG': false,
-                    },
+        },
     },
 });
   

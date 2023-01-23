@@ -1,5 +1,5 @@
 <template>
-    <PesquisarEnteForm />
+    <PesquisarEnteForm :searchEnte='searchEnte'/>
     <div v-if='users.length > 0'>
         <EnteTable users='users'/>
     </div>
@@ -19,21 +19,33 @@
         },
         created() {
             this.getUsers();
-            makeServer();
         },
         data() {
             return {
+                name: '',
+                count: 0,
                 users: [],
+                filteredUsers: [],
             }
         },
         methods: {
             getUsers() {
-                const result = fetch('/api/users');
-                result.then((response) => {
-                    response.json().then((data) => {
-                        this.users = data;
-                    });
-                });
+                this.users = [
+                    {
+                        id: 1,
+                        name: 'John Doe',
+                        age: 25,
+                    },
+                    {
+                        id: 2,
+                        name: 'Jane Doe',
+                        age: 22,
+                    },
+                ];
+            },
+            searchEnte() {
+                    console.log(++this.count);
+                
             }
         }
     })

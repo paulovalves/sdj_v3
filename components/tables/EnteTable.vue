@@ -25,7 +25,11 @@
 </template>
 
 <script lang="ts">
+import { useEnteStore } from '../../stores/enteStore';
     export default defineComponent({
+        setup() {
+            console.log('hello');
+        },
         name: 'EnteTable',
         created() {
             this.getusers();

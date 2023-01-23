@@ -27,7 +27,13 @@
 <script lang="ts">
     export default defineComponent({
         name: 'EnteTable',
-            })
+        props: {
+            users: {
+                type: Array,
+                required: true
+            }
+        },
+    })
 </script>
 
 <style>
